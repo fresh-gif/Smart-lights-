@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoomTab</title>
+    <link rel="stylesheet" href="Rooms.css">
+    <link rel="shortcut icon" href="ico/favicon.ico" type="image/x-icon">
+</head>
+<div class="body">
+
+    <body>
+    
+        <nav>
+
+        <div class="logo">
+            <p>IT EASY</p>
+        </div>
+
+            <ul class="nav_list">
+                <li><a href="Rooms.html">Room</a></li> 
+                <li><a href="Dashboard/index.html">Dash Board</a></li> 
+                <li><a href="info.html">Info</a></li> 
+                <button type="submit" class="btn" onclick="openPopup()">Log Out</button> 
+            </ul>
+                    
+    </nav>
+
+        <div class="popup" id="popup">
+            <img src="images/tick.png" alt="">
+            <h2>Log Out confirmation!</h2>
+
+            <form action="SignUp_page.html">
+                <button type="submit">Yes</button>
+            </form>
+            
+            <form action="Rooms.html">
+                <button type="submit">No</button>
+            </form>
+
+        </div>
+
+        <script>
+            let popup = document.getElementById("popup");
+
+            function openPopup(){
+                popup.classList.add("open-popup");
+            }
+            function closePopup(){
+                popup.classList.remove("open-popup");
+            }
+
+        </script>
+
+    <div class="appliances_container">
+
+        <h1> Rooms </h1>
+
+        <div class="row1">
+
+            <!-- LIVING ROOM -->
+            <div class="Device3">
+                <a href="kitchen.html">
+                    
+                    <div class="device_img" style="
+                        background-image: url(Images/Rooms/livingRoom1.png);
+                        border-radius: 3%;">
+                    </div>
+                </a>
+                
+                <br>
+                <a href="switch.html">
+                    <p style="text-decoration: none; font-size: 19px; color: black; font-weight: bold;
+                letter-spacing: 4px;">Living Room</p><br>
+                </a>
+                
+                
+            </div>
+
+            <!-- KITCHEN -->
+                <div class="Device1">
+                    <a href="">
+                        <div class="device_img" style="
+                        background-image: url(images/Rooms/kitchen.png);
+                        border-radius: 3%;">
+                        
+                    </div>
+                    </a><br>
+                    
+                    <a href="">
+                        <p style="text-decoration: none; font-size: 19px; color: black; font-weight: bold;
+                    letter-spacing: 4px;">Kitchen lights</p><br>
+                    </a>
+                    
+                    <!-- <label class="toggle-switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>                   -->
+                    
+                </div>
+
+            <!-- BATHROOM -->
+                    <div class="Device3">
+                                    <a href="">
+                                        <div class="device_img" style="
+                                        background-image: url(images/Rooms/bathroom.png);
+                                        border-radius: 3%;">
+                                        
+                                    </div>
+                                    </a><br>
+                                    
+                                    <a href="switch.html">
+                                        <p style="text-decoration: none; font-size: 19px; color: black; font-weight: bold;
+                                    letter-spacing: 4px;">Bathroom</p><br>
+                                    </a>
+                                  
+                                    
+                                </div>
+
+            <!-- BEDROOM -->
+                                <div class="Device3">
+                                    <a href="">
+
+                                        <div class="device_img" style="
+                                        background-image: url(Images/Rooms/bedroom.png); 
+                                        border-radius: 3%;">
+                                        
+                                    </div>
+                                    </a><br>
+                                    <a href="switch.html">
+                                        <p style="text-decoration: none; font-size: 19px; color: black; font-weight: bold;
+                                    letter-spacing: 4px;">Bedroom</p><br>
+                                    </a>          
+                                                </div>
+                                            
+                                            </div>
+                
+            
+        
+    </div>
+    
+    
+
+</body>
+
+</div>
+
+</html>

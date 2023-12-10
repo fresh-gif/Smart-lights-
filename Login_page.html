@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeSpace Login</title>
+    <link rel="stylesheet" href="Login_page.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+
+
+</head>
+<body>
+
+    <div class ="wrapper">
+
+        
+            <h1>Login</h1>
+
+            <div class ="input-box">
+                <input type="text" id="lemail" name="username" placeholder="username"/>
+                <i class="bx bxs-user-circle"></i>
+            </div>
+
+            <div class="input-box">
+                <input type="text" id="lpassword" name="password" placeholder="password"/>
+                <i class="bx bxs-lock"></i>
+            </div>
+
+            <input type="submit" class="btn" value="login" id="signIn" name="signup-submit">
+
+
+            <div class="register-link">
+                <a href="#">Forgot Password?</a>
+                <br><br>
+                <p>Don't have an account? <a href="SignUp_page.html"> Register</a></p>
+            </div>
+
+
+    </div>
+    
+</body>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+    import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBCj46mc4a_Q16K_IugcdRhE--UwLgv3Ug",
+      authDomain: "authentication-app-b028b.firebaseapp.com",
+      databaseURL: "https://authentication-app-b028b-default-rtdb.firebaseio.com",
+      projectId: "authentication-app-b028b",
+      storageBucket: "authentication-app-b028b.appspot.com",
+      messagingSenderId: "1085046599528",
+      appId: "1:1085046599528:web:fc65a4072f511d948030dd"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    const auth = getAuth();
+
+    
+    
+    signIn.addEventListener('click',(e)=>{
+    var email = document.getElementById('lemail').value;
+    var password = document.getElementById('lpassword').value;
+
+    signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+
+        const dt = new Date();
+        update(ref(database, 'users/' + user.uid),{
+            last_login: dt,
+        })
+
+        alert('user loged in!');
+
+        window.location.href = 'Rooms.html'; 
+        // ...
+    })
+    .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        alert(errorMessage);
+    });
+  });
+</script>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create account</title>
+    <link rel="shortcut icon" href="iteasylogo.jpeg" type="image/x-icon">
+</head>
+
+<style>
+    body{
+        /* display: flex; */
+        background-image: url(images/Background/back2.jpg);
+        background-size: cover;
+        background-position: right;
+        /* background-attachment: fixed; */
+        background-repeat: no-repeat;
+    }
+    .container {
+        background-color: rgba(255, 255, 255, 0.178);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        color: #c98021;
+        margin: 2px auto;
+        max-width: 300px;
+        padding: 50px;
+        padding-right: 70px;
+        font-family: sans-serif;
+        font-size: small;
+        max-height: 80vh;
+        height: 80vh;
+    }
+
+    .container .input_content{
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .container .input_content input {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1) inset;
+        color: #424242;
+        font-size: 18px;
+        margin-bottom: 20px;
+        padding: 10px;
+        width: 100%;
+        font-size: small;
+        
+        letter-spacing: 1px;
+        
+        
+    }
+
+    .container #saveUser {
+        background-color: #E7D8D8;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px 0 rgba(75, 119, 255, 0.4);
+        color: #7c7c7c;
+        cursor: pointer;
+        font-size: 18px;
+        margin-top: 20px;
+        padding: 10px;
+        width: fit-content;
+        font-size: small;
+        align-self: center;
+    }
+
+    .container #saveUser:hover {
+        background: transparent;
+        color: white;
+    }
+
+    .icon{
+        padding: 10px;  display: flex;  flex-direction: column;
+        align-items: center;     padding: 30px;     margin-left: 200px;
+        border-radius: 100%; height: fit-content; width: fit-content;
+        align-self: center; margin: 40px;  padding-left: 35;   padding-right: 35px;
+
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1) inset;
+        animation: change-border-radius 2s linear infinite alternate;
+    }
+
+    .icon .head{
+        height: 30px;   width: 30px;
+        
+        border-radius: 100%;
+        margin: 1.5px;
+
+
+        border: 1px solid #cbcbcb;
+        animation: changeColor 18s infinite;
+    }
+
+    @keyframes changeColor {
+        0% {
+            background-color: #D1E7E0;
+        }
+        3.33% {
+            background-color: #E6EBE0;
+        }
+        6.66% {
+            background-color: #F2E9E4;
+        }
+        10% {
+            background-color: #ECE4F2;
+        }
+        13.33% {
+            background-color: #D4E4F2;
+        }
+        16.66% {
+            background-color: #E4D4D4;
+        }
+        20% {
+            background-color: #E0D1E7;
+        }
+        23.33% {
+            background-color: #E7D1D1;
+        }
+        26.66% {
+            background-color: #D1E7D8;
+        }
+        30% {
+            background-color: #E3D4E5;
+        }
+        33.33% {
+            background-color: #E5E3D4;
+        }
+        36.66% {
+            background-color: #F2E5D4;
+        }
+        40% {
+            background-color: #D4E5E3;
+        }
+        43.33% {
+            background-color: #D8D1E7;
+        }
+        46.66% {
+            background-color: #E7D8D8;
+        }
+        50% {
+            background-color: #D8E7D1;
+        }
+        53.33% {
+            background-color: #E7D1D4;
+        }
+        56.66% {
+            background-color: #D4E5F2;
+        }
+        60% {
+            background-color: #D4E5D4;
+        }
+        63.33% {
+            background-color: #E5D4D4;
+        }
+        66.66% {
+            background-color: #D4E5E9;
+        }
+        70% {
+            background-color: #D4E5F2;
+        }
+        73.33% {
+            background-color: #E5D4E3;
+        }
+        76.66% {
+            background-color: #E5E3D4;
+        }
+        80% {
+            background-color: #E5D4F2;
+        }
+        83.33% {
+            background-color: #D8E7D1;
+        }
+        86.66% {
+            background-color: #D1E7E7;
+        }
+        90% {
+            background-color: #D1E7D1;
+        }
+        93.33% {
+            background-color: #E7D1E7;
+        }
+        96.66% {
+            background-color: #D4E5E5;
+        }
+        100% {
+            background-color: #E5E5D4;
+        }
+    }
+
+    .icon .body{
+        height: 35px;   width: 50px;
+        border-top-right-radius: 15px;  border-top-left-radius: 15px;
+        border-bottom-right-radius: 10px;  border-bottom-left-radius: 10px;
+        margin: 1.5px;
+
+
+        border: 1px solid #cbcbcb;
+        animation: changeColor 18s infinite;
+        
+
+    }
+    .input_fields{
+        text-transform: capitalize;
+    }
+    p{
+        font-size: smaller;
+        color: orangered;
+        margin-left: 10px;
+        margin-top: -5px;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+    @keyframes change-border-radius {
+        from {
+            border-radius: 95%;
+        }
+        to {
+            border-radius: 0%;
+        }
+}
+
+</style>
+
+<body>
+
+    
+
+        <div class="container">
+
+            <div class="icon" id="icon">
+                <div class="head"></div>
+                <div class="body"></div>
+            </div>
+            
+            <div class="input_content">
+                <label for="surname">username:</label><br>
+                <input type="text" id="username" name="surname" class="input_fields" placeholder="Enter your username" maxlength="21">
+            </div>
+            
+            <div class="input_content">
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" maxlength="50">
+            </div>
+            
+            <div class="input_content">
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" class="input_fields">
+            </div>
+            <p id="password-strength"></p>
+
+            <input type="submit" value="sign-up" id="saveUser" name="signup-submit">
+
+        </div>
+        
+   
+
+    <script>
+        var passwordInput = document.getElementById("password");
+        var passwordStrength = document.getElementById("password-strength");
+        const signup = document.getElementById("saveUser");
+      
+        passwordInput.addEventListener("input", function() {
+          var password = passwordInput.value;
+          var strength = checkPasswordStrength(password);
+      
+          if (strength == "strong") {
+            passwordStrength.innerHTML = "Strong password";
+            signup.style.display = "block";
+          } else if (strength == "medium") {
+            passwordStrength.innerHTML = "Medium password";
+            signup.style.display = "none";
+          } else if (strength == "weak") {
+            passwordStrength.innerHTML = "Weak password";
+          } else {
+            passwordStrength.innerHTML = "vjvkbkbjbk";
+            signup.style.display = "none";
+          }
+        });
+      
+        function checkPasswordStrength(password) {
+          if (password.length >= 8 && /\d/.test(password) && /[a-z]/.test(password) && /[A-Z]/.test(password) && /[\W_]/.test(password)) {
+            return "strong";
+            signup.style.display = "none";
+          } else if (password.length >= 8 && /\d/.test(password) && /[a-z]/.test(password)) {
+            return "medium";
+            signup.style.display = "none";
+          } else {
+            return "weak";
+            signup.style.display = "none";
+          }
+        }
+        function validateText(input) {
+        input.value = input.value.replace(/[^a-zA-Z]/g, '');
+  }
+      </script>
+</body>
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+    import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBCj46mc4a_Q16K_IugcdRhE--UwLgv3Ug",
+      authDomain: "authentication-app-b028b.firebaseapp.com",
+      databaseURL: "https://authentication-app-b028b-default-rtdb.firebaseio.com",
+      projectId: "authentication-app-b028b",
+      storageBucket: "authentication-app-b028b.appspot.com",
+      messagingSenderId: "1085046599528",
+      appId: "1:1085046599528:web:fc65a4072f511d948030dd"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    const auth = getAuth();
+
+    
+    saveUser.addEventListener('click', (e) => {
+        var username = document.getElementById('username').value;
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+
+            set(ref(database, 'users/' + user.uid),{
+                username: username,
+                username: username,
+                email: email,
+                password: password
+            })
+
+            alert('A user has been added to databse!');
+            window.location.href = 'Rooms.html';
+            // ...s
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            alert(errorMessage);
+            // ...
+        });
+    });
+
+    signIn.addEventListener('click',(e)=>{
+    var email = document.getElementById('lemail').value;
+    var password = document.getElementById('lpassword').value;
+
+    signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+
+    const dt = new Date();
+    update(ref(database, 'users/' + user.uid),{
+              last_login: dt,
+          })
+
+          alert('user loged in!');
+
+          window.location.href = 'Project Management/index.html'; 
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorMessage);
+  });
+  });
+</script>
+
+</html>

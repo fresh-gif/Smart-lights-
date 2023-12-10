@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch</title>
+
+    <style>
+            html { font-family: Helvetica; 
+            display: inline-block; 
+            margin: 0px auto; 
+            text-align: center;
+            }
+
+
+            body {
+            /* background-color: #814033; */
+            background-color: rgba(0, 0, 0, 0.986);
+            /* backdrop-filter: blur(5px); */
+            background-position: center;
+            background-size: cover;
+            margin-top: 250px;
+            padding: 10px;
+            }
+
+            div {
+                width: 420px;
+                 margin: -50px 700px;
+                /* background-color: #e2c59ec2; */
+                 background-color: #000000;
+                border-radius: 10px;
+                padding: 30px 40px;
+                justify-content: center;
+                position: absolute;
+                align-items: center;
+                color: #f8f8f8; /* Dark grey color for text */
+                border: none;
+                padding: 12px 24px;
+                font-size: 16px;
+                font-weight: bold;
+                border-radius: 5px;
+                box-shadow: 0 0 23px rgba(255, 255, 255, 0.877);
+                transition: background-color 0.3s ease;
+            }
+
+            h1 {
+                font-size: 35px;
+                text-transform: uppercase;
+                letter-spacing: 4px;
+                font-weight: bold;
+                color: #ffffff;
+                text-align: center;
+                margin-top: 40px;
+                margin-bottom: 10px;
+                padding-bottom: 8px;
+                text-shadow: 2px 2px 4px rgba(126, 117, 117, 0.166);
+            }
+
+            h3 {
+            color: #141313;
+            margin-bottom: 50px;
+            font-size: 12px;
+            }
+
+            .button {
+            display: block;
+            width: 80px;
+            background-color: #1abc9c;
+            border: none;
+            color: white;
+            padding: 13px 30px;
+            text-decoration: none;
+            font-size: 25px;
+            margin: 0px auto 35px;
+            cursor: pointer;
+            border-radius: 18px;
+
+            }
+
+            .button-on {background-color: #66db34;}
+
+            .button-on:active {background-color: #66db34;}
+
+            .button-off {background-color: #d41515;}
+
+            .button-off:active {background-color: #d41515;}
+
+            p {
+            font-size: 16px;color: #f3ab0f;margin-bottom: 10px;
+            }
+
+        
+    </style>
+
+
+</head>
+<body>
+        <div>
+
+             <h1>Switch</h1>
+        <p>Appliance Status: ON</p><a class="button button-off\" href="#">OFF</a>
+
+        <p>Appliance Status: OFF</p><a class="button button-on\" href="#">ON</a>
+
+        </div>
+           
+</body>
+</html>

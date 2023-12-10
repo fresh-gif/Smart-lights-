@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Tab</title>
+    <link rel="stylesheet" href="info.css">
+    <link rel="shortcut icon" href="ico/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+
+    <nav>
+
+            <div class="logo">
+                <p>IT EASY</p>
+            </div>
+
+                <ul>
+                    <li><a href="Rooms.html">Room</a></li> 
+                    <li><a href="Dashboard/index.html">Dash Board</a></li> 
+                    <li><a href="info.html">Info</a></li> 
+                    <button type="submit" class="btn" onclick="openPopup()">Log Out</button> 
+                </ul>
+                        
+        </nav>
+
+        <div class="popup" id="popup">
+            <img src="images/tick.png" alt="">
+            <h2>Log Out confirmation!</h2>
+
+            <form action="SignUp_page.html">
+                <button type="submit">Yes</button>
+            </form>
+            
+            <form action="Rooms.html">
+                <button type="submit">No</button>
+            </form>
+
+        </div>
+
+        <script>
+            let popup = document.getElementById("popup");
+
+            function openPopup(){
+                popup.classList.add("open-popup");
+            }
+            function closePopup(){
+                popup.classList.remove("open-popup");
+            }
+
+        </script>
+
+
+        <br><br><br><br>
+    <h1>All about South Africa's Eletricity</h1>
+
+
+    <p>
+        Electricity prices in South Africa are quite high nationally. As a result, most people are careful when it comes to consumption. 
+        Therefore, you might be curious to learn more about your consumption and whether you're getting your money's worth. 
+        This article disproves the South African electricity cost estimate for 2023 and emphasizes practical techniques to cut back on consumption.
+    </p>
+
+    <div class="appliances_container">
+        
+
+        <div class="row1">
+
+            <!--  -->
+            <div class="Device3">
+            
+                    <p style="text-decoration: none; font-size: 19px; color: rgb(238, 238, 238); font-weight: bold;
+                letter-spacing: 4px;">How much is electricity per unit in South Africa?</p><br>
+             <br>
+             <p>
+                More than 1,000 watts is the power rating of the majority of electrical appliances. 
+                The power rating on an electric appliance dictates how much power the device consumes as it runs. As a result, 
+                electrical power is expressed in kilowatts, or KW. 1000 watts make up one kilowatt.
+             </p>
+                
+            </div>
+
+            <!--  -->
+            <div class="Device3">
+            
+                <p style="text-decoration: none; font-size: 19px; color: rgb(238, 238, 238); font-weight: bold;
+            letter-spacing: 4px;">How to calculate eletricity tariffs</p><br>
+         <br>
+         <p>
+            The rate at which electrical energy is supplied to a consumer is known as tariff. 
+            The cost is determined per home based on the Eskom tariff and is expressed in cents per kilowatt-hour (c/kWh). 
+            Higher prices apply to users who use more than 600 kWh than to users who use less than 600 kWh.
+
+         </p>
+            
+        </div>
+        <!--  -->
+         <div class="Device3">
+            
+                    <p style="text-decoration: none; font-size: 19px; color: rgb(238, 238, 238); font-weight: bold;
+                letter-spacing: 4px;">How to calculate the cost of eletricity</p><br>
+             <br>
+             <p>
+                By measuring the amount of power your appliances consume, you may determine your total KWh. 
+                To find out how much energy your appliances use, consult the chart of <a href="https://letsavelectricity.com/wattage-power-consumption-of-household-appliances/" > typical appliance electricity usage.</a>
+             </p>
+                
+            </div>
+
+            <!--  -->
+            <div class="Device3">
+            
+                <p style="text-decoration: none; font-size: 19px; color: rgb(238, 238, 238); font-weight: bold;
+            letter-spacing: 4px;">How much does Eskom charge for 1 kWh? </p><br>
+         <p>
+            When purchasing Eskom's pre-paid power, a kWh equals one unit. The precise cost of a kWh is determined on things like one's home's price, municipality, 
+            power provider, and current. From 1 April 2021 to 31 March 2022, the lowest Eskom rate was R1.61 per kilowatt-hour (kWh). Due to variables including a consumer's 
+            location and consumption patterns, Eskom's pricing structure and variances are complex. Depending on their typical use, city residents will receive up to 25 or
+             60 units free under the 2022/2023 tariffs. Up to 350 monthly units are used at a cost of R1,80 (VAT included), whereas 350 to 450 monthly units are consumed at a cost of R3,63. 
+
+
+            </p>
+            
+        </div>
+
+
+        </div>
+
+
+       
+
+
+</body>
+</html>

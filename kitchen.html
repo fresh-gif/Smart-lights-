@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitchen</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<style>
+    /* styles.css */
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 100vw;
+        width: 100vw;
+        margin: 30;
+        padding: 30;
+        background-image: url(images/Background/back2.jpg); 
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    nav{
+        position: inherit;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        height: fit-content;
+        width: 90vw;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #cccccce1;
+        padding: 10px;
+        padding-left: 30px; padding-right: 30px;
+        border-radius: 30px;
+        margin-bottom: 30px;
+        margin-top: 15px;
+        
+    }
+    nav div{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        height: fit-content;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav_list{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        height: fit-content;
+        align-items: center;
+        justify-content: space-between;
+        
+    }
+
+    .nav_list li{
+        margin-right: 20px;
+        list-style: none;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        
+    }
+
+    .nav_list button{
+        border-radius: 30px;
+        padding: 10px;
+        border: 1px solid #2195f351;
+        background: #2195f351;
+    }
+
+    .nav_list button:hover{
+        background: transparent;
+        border: 1px solid rgba(128, 128, 128, 0.525);
+        
+    }
+
+    .nav_list li a{
+        text-decoration: none;
+        color: black;
+    }
+    .nav_list li a:hover{
+        color: orange;
+    }
+    
+    .stove:hover{
+        box-shadow: none;
+    }
+
+    
+    .Appliances{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .Appliances div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: fit-content;
+        min-width: fit-content;
+        margin: 20px;
+        width: 30vw;
+        height: 40vh;
+        background: #2a2a2a6a;
+        padding: 20px;
+
+       
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 20px;
+    }
+
+    .Lights:hover{
+        box-shadow: 0 0 10px #deb887b6;;
+    }
+    
+
+    img {
+        width: 22vw;
+        height: 22vh;
+        max-width: 22vw;
+        max-height: 22vh;
+        background-size: contain;
+        
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #525252bd;;
+        border-radius: 34px;
+        transition: .4s;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        border-radius: 50%;
+        transition: .4s;
+    }
+
+    input:checked + .slider {
+        background-color: #00ff8473;
+    }
+
+    input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .slider:before {
+        transform: translateX(26px);
+    }0
+    .popContainer{
+    width: 100%;
+    height: 120vh;
+    background-color: #adadadbc;
+    /* background-image: url(images/Background/pic1.jpg); */
+    /* filter: blur(8px);  */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup{
+    width: 100%;
+    height: 100%;
+    background-color: #1f1e1e;
+    border-radius: 6px;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 79px 30px 30px;
+    color: #fcfcfc;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+}
+
+.open-popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    /* filter: blur(8px); */
+}
+
+.popup img{
+
+    width:100px;
+    margin-top: -50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.089);
+}
+
+.popup button{
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px 0;
+    background-color: #ad9924;
+    outline: none;
+    font-size: 18px;
+    border-radius: 18px;
+    border: 0;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+}
+
+
+</style>
+<body>
+
+
+    <nav>
+
+        <div class="logo">
+            <p>IT EASY</p>
+        </div>
+
+            <ul class="nav_list">
+                <li><a href="Rooms.html" target="_blank">Room</a></li> 
+                <li><a href="Dashboard/index.html" target="_blank">Dash Board</a></li> 
+                <li><a href="info.html" target="_blank">Info</a></li> 
+                <button type="submit" class="btn" onclick="openPopup()">Log Out</button> 
+            </ul>
+                    
+    </nav>
+
+    <!-- <h1><a href="Rooms.html" target="_blank" style="text-decoration: none; color: #ccc;">HOME-SPACE</a></h1> -->
+    <div class="Appliances">
+
+        <div class="Lights" style="background: #dbdbdb58; border: 2px solid rgb(128, 128, 128);">
+            <img src="Images/Rooms/livingRoom1.png" alt="Image" class="image_app">
+            <p>Lights</p>
+            <label class="switch">
+                <input type="checkbox" id="toggle" onchange="toggleLED()">
+                <span class="slider"></span>
+            </label>
+            <p id="counter">Offline</p>
+        </div>
+
+        <div class="Stove">
+            <img src="Images/Rooms/livingRoom1.png" alt="Image">
+            <p>Main Stove</p>
+            <!-- <label class="switch">
+                <input type="checkbox" id="toggle_2">
+                <span class="slider"></span>
+            </label> -->
+            <p id="counter_2">Power Readings: n/a</p>
+        </div>
+
+        <div class="Microwave">
+            <img src="Images/Rooms/livingRoom1.png" alt="Image">
+            <p>Microwave</p>
+            <!-- <label class="switch">
+                <input type="checkbox" id="toggle_2">
+                <span class="slider"></span>
+            </label> -->
+            <p id="counter_2">Power Readings: n/a</p>
+        </div>
+
+        <div class="Refrigerator">
+            <img src="Images/Rooms/livingRoom1.png" alt="Image">
+            <p>Refrigerator</p>
+            <!-- <label class="switch">
+                <input type="checkbox" id="toggle_2">
+                <span class="slider"></span>
+            </label> -->
+            <p id="counter_2">Power Readings: n/a</p>
+        </div>
+        
+    </div>
+
+    <div class="popup" id="popup">
+        <img src="images/tick.png" alt="">
+        <h2>Log Out confirmation!</h2>
+
+        <form action="SignUp_page.html">
+            <button type="submit">Yes</button>
+        </form>
+        
+        <form action="kitchen.html">
+            <button type="submit">No</button>
+        </form>
+
+    </div>          
+
+    <script>
+        let popup = document.getElementById("popup");
+
+        function openPopup(){
+            popup.classList.add("open-popup");
+        }
+        function closePopup(){
+            popup.classList.remove("open-popup");
+        }
+
+    </script>
+
+    
+
+    
+    <script src="script.js"></script>
+
+    <script>
+        function toggleLED() {
+        const isChecked = document.getElementById("toggle").checked;
+        var url = isChecked ? "http://192.168.137.196/update?state=on" : "http://192.168.137.196/update?state=off";
+    
+    
+        // Make an AJAX request to update the LED state
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+                console.log("LED state updated successfully");
+            } else {
+                console.error("Failed to update LED state");
+            }
+            }
+        };
+        xhr.open("GET", url, true);
+        xhr.send();
+        }
+    
+      </script>
+
+    
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+<script type="module">
+    // script.js (as an ES6 module)
+
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+    import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-database.js";
+
+    // Initialize Firebase
+    const firebaseConfig = {
+        apiKey: "AIzaSyBCj46mc4a_Q16K_IugcdRhE--UwLgv3Ug",
+        authDomain: "authentication-app-b028b.firebaseapp.com",
+        databaseURL: "https://authentication-app-b028b-default-rtdb.firebaseio.com",
+        projectId: "authentication-app-b028b",
+        storageBucket: "authentication-app-b028b.appspot.com",
+        messagingSenderId: "1085046599528",
+        appId: "1:1085046599528:web:fc65a4072f511d948030dd"
+    };
+
+    const firebaseApp = initializeApp(firebaseConfig);
+
+    // Get a reference to the Firebase Realtime Database
+    const database = getDatabase(firebaseApp);
+
+    const roomName = "Kitchen"; // Change this to the room you want to track
+
+    let count = 0;
+    let interval;
+    let toggleState = false; // Variable to store the toggle state
+
+    // Get the last saved count and toggle state from Firebase on app initialization for the specific room
+    const roomRef = ref(database, `users/Powerusage per Room/${roomName}`);
+    get(roomRef)
+        .then((snapshot) => {
+            if (snapshot.exists()) {
+                const roomData = snapshot.val();
+                count = roomData.Lights; // Retrieve the Lights count
+                toggleState = roomData.ToggleState; // Retrieve the toggle state
+                toggleSwitch.checked = toggleState; // Set the toggle state based on Firebase
+            }
+            counterElement.textContent = ` `;
+        })
+        .catch((error) => {
+            console.error("Error getting data:", error);
+        });
+
+    const counterElement = document.getElementById("counter");
+    const toggleSwitch = document.getElementById("toggle");
+
+    toggleSwitch.addEventListener("change", () => {
+        toggleState = toggleSwitch.checked; // Update the toggle state variable
+
+        if (toggleState) {
+            interval = setInterval(() => {
+                count++;
+                counterElement.textContent = ` `;
+
+                // Save the updated count and toggle state to Firebase for the specific room
+                set(roomRef, {
+                    Lights: count,
+                    Geyser: 'not connected',
+                    Refrigerator: 'not connected',
+                    Microwave: 'not connected',
+                    ToggleState: toggleState, // Save the toggle state
+                });
+
+            }, 1000);
+
+        } else {
+            clearInterval(interval);
+
+            // Save the updated toggle state to Firebase for the specific room when the toggle is switched off
+            set(roomRef, {
+                Lights: count,
+                Geyser: 'not connected',
+                Refrigerator: 'not connected',
+                Microwave: 'not connected',
+                ToggleState: toggleState, // Save the toggle state
+            });
+        }
+
+    });
+
+    function isEightOClock() {
+        const now = new Date();
+        return now.getHours() === 12 && now.getMinutes() === 40 && now.getSeconds() === 5;
+    }
+
+    // Function to start the interval when it's 8 o'clock
+    function startIntervalAtEightOClock() {
+        if (isEightOClock()) {
+            // Start the interval if the current time is 8 o'clock
+            toggleSwitch.checked = true; // Automatically turn on the switch
+            toggleSwitch.dispatchEvent(new Event('change')); // Trigger the change event
+
+        } else {
+            // Check every second and start the interval when it's 8 o'clock
+            setInterval(() => {
+                if (isEightOClock()) {
+                    toggleSwitch.checked = true; // Automatically turn on the switch
+                    toggleSwitch.dispatchEvent(new Event('change')); // Trigger the change event
+
+                }
+            }, 1000);
+        }
+    }
+
+    // Call the function to start the interval at 8 o'clock
+    startIntervalAtEightOClock();
+</script>
+</html>
+
